@@ -1,0 +1,12 @@
+[wp_uap_referrals]
+
+status
+0: Rechazado
+1: No verificado
+2: Verificado
+
+source
+woo: venta directa
+mlm: venta indirecta
+
+[parent_referral_id]

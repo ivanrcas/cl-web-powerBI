@@ -1,0 +1,4 @@
+1. Consultar un textbox dentro POWER BI
+
+   Sí-> Hágale. Hacer acceso mediante la web.	
+   No-> Averiguar los costos de Azure.**por ser institucional.

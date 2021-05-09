@@ -1,0 +1,49 @@
+SELECT
+cm.id AS 'idModulo',
+u.id AS 'idusuario',
+u.username AS 'User',
+c.id AS 'Course',
+
+CASE
+    WHEN m.name = 'scorm' THEN 'Evaluación'
+    WHEN m.name = 'resource' THEN 'Archivo'
+    WHEN m.name = 'page' THEN 'Vídeo'
+END AS 'Tipo de Actividad',
+
+CASE 
+    WHEN cm.module = 1 THEN (SELECT a1.name FROM mdl_assign a1            WHERE a1.id = cm.instance)
+    WHEN cm.module = 2 THEN (SELECT a2.name FROM mdl_assignment a2    WHERE a2.id = cm.instance)
+    WHEN cm.module = 3 THEN (SELECT a3.name FROM mdl_book a3               WHERE a3.id = cm.instance)
+    WHEN cm.module = 4 THEN (SELECT a4.name FROM mdl_chat a4                WHERE a4.id = cm.instance)
+    WHEN cm.module = 5 THEN (SELECT a5.name FROM mdl_choice a5            WHERE a5.id = cm.instance)
+    WHEN cm.module = 6 THEN (SELECT a6.name FROM mdl_data a6                WHERE a6.id = cm.instance)
+    WHEN cm.module = 7 THEN (SELECT a7.name FROM mdl_feedback a7        WHERE a7.id = cm.instance)
+    WHEN cm.module = 8 THEN (SELECT a8.name FROM mdl_folder a8              WHERE a8.id = cm.instance)
+    WHEN cm.module = 9 THEN (SELECT a9.name FROM mdl_forum a9              WHERE a9.id = cm.instance)
+    WHEN cm.module = 10 THEN (SELECT a10.name FROM mdl_glossary a10         WHERE a10.id = cm.instance)
+    WHEN cm.module = 11 THEN (SELECT a11.name FROM mdl_imscp  a11           WHERE a11.id = cm.instance)
+    WHEN cm.module = 12 THEN (SELECT a12.name FROM mdl_label a12              WHERE a12.id = cm.instance)
+    WHEN cm.module = 13 THEN (SELECT a13.name FROM mdl_lesson a13            WHERE a13.id = cm.instance)
+    WHEN cm.module = 14 THEN (SELECT a14.name FROM mdl_lti a14                    WHERE a14.id = cm.instance)
+    WHEN cm.module = 15 THEN (SELECT a15.name FROM mdl_page a15               WHERE a15.id = cm.instance)
+    WHEN cm.module = 16 THEN (SELECT a16.name FROM mdl_quiz  a16               WHERE a16.id = cm.instance)
+    WHEN cm.module = 17 THEN (SELECT a17.name FROM mdl_resource a17         WHERE a17.id = cm.instance)
+    WHEN cm.module = 18 THEN (SELECT a18.name FROM mdl_scorm a18             WHERE a18.id = cm.instance)
+    WHEN cm.module = 19 THEN (SELECT a19.name FROM mdl_survey a19             WHERE a19.id = cm.instance)
+    WHEN cm.module = 20 THEN (SELECT a20.name FROM mdl_url a20                      WHERE a20.id = cm.instance)
+    WHEN cm.module = 21 THEN (SELECT a21.name FROM mdl_wiki a21                    WHERE a21.id = cm.instance)
+    WHEN cm.module = 22 THEN (SELECT a22.name FROM mdl_workshop a22           WHERE a22.id = cm.instance)
+END AS Nombre,
+(cm.section - 1) AS Lección
+
+FROM mdl_course_modules_completion cmc 
+JOIN mdl_user u ON cmc.userid = u.id
+JOIN mdl_course_modules cm ON cmc.coursemoduleid = cm.id
+JOIN mdl_course c ON cm.course = c.id
+JOIN mdl_modules m ON cm.module = m.id
+
+# skip the predefined admin AND guest USER
+WHERE u.id > 2 AND c.id=2
+
+
+ORDER BY Lección

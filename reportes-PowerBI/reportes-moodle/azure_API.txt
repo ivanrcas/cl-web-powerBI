@@ -1,0 +1,20 @@
+App ID:
+78a1b42a-b71b-412c-a708-61245c8f62b3
+
+Azure Portal:
+c93681c3-c408-4abe-a13f-c099da1cae4d
+
+APP ID
+
+8fcbd757-6f17-4f54-a4be-98c153d8a31b
+
+8fcbd757-6f17-4f54-a4be-98c153d8a31b
+
+PBIE_CLIENT_ID = 78a1b42a-b71b-412c-a708-61245c8f62b3
+PBIE_GROUP_ID = 77dfe8a7-7801-403f-bdb3-ca385c6ecf36
+PBIE_REPORT_ID = a2ebf47a-6ddb-4e22-ab7e-9cb747eb6c42
+PBIE_USERNAME = richard.arias@compulearning.onmicrosoft.com
+PBIE_PASSWORD = Zokawu167910
+
+77dfe8a7-7801-403f-bdb3-ca385c6ecf36
+

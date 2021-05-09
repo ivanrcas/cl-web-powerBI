@@ -1,0 +1,81 @@
+ESTRUCTURA
+https://compulearning.com/representantes-comerciales/
+
+LOGIN
+https://compulearning.com/login-representante/
+
+REGISTRO
+https://compulearning.com/registro-representante/
+
+
+
+Mi ejemplo - Estructura
+
+010976521463 cero nivel - papa (Director) --> ejemplo de rankeo
+1098654123 primer nivel - Hijo ----> nombre de rango, ya tiene 6 ventas
+1098526487 segundo nivel - Nieto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alfredo Perez
+Ismael
+Julian Jimenez
+Pedro
+
+Juan (hijo de Ismael)
+
+cualquier referencia:
+https://compulearning.com/?r=1098526487
+
+enlace:
+https://compulearning.com/representantes/?r=010976521463
+
+https://compulearning.com/representantes/?r=wewewew
+
+http://localhost/pormebi/?ref=user3
+
+
+
+1ero 0202020 Juan Carlos 1 venta
+
+2do 303030 Luis Gomez luis@pruebadecl.com 1 venta 
+
+3ro 404040 Richard Perez rperez@pruebacl.com 1 venta
+
+http://localhost/prototipo?ref=234589765
+http://localhost/prototipo?ref=wewewew
+
+............................................................................................
+Conclusiones:
+1. Cuando el producto cambia de estado de "En espera" a "Completado" desde WooCommerce,
+se registra al referencia sin pagar. Es decir, si tiene en cuenta hasta que se pague de completo el paquete.
+
+La solución está en los estados de los pedidos en WooCoommerce. Si es un abono, cambiar a estado "Completado"
+hasta que el curso se pague totalmente y de esta forma, se genera automaticamente las comisiones respectivas de 
+los representantes; se restringe que se deba completar el pago de todo el paquete.
+
+2. No hay link para Adiministración de la Cuenta en algun menú (incompleto) - Perfiles anteriores creados y perflies nuevos creados a través del proceso de checkout.
+https://compulearning.com/my-account/
+Sin embargo incluí la opción de hacerse representante comercial desde el menú de Mi cuenta de WooCoommerce.
+
+3. Comprobar el servidor SMTP para el envío de mensajes.
+
+4. Verificar los pagos al asesor para poder subir de rango. El asesor debe esperar hasta que los paquetes esten en completado.

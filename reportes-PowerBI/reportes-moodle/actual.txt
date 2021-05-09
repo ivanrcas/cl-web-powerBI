@@ -1,0 +1,19 @@
+SELECT
+cm.id AS idModulo,
+cm.course AS Curso,
+
+CASE 
+    WHEN cm.module = 18 THEN 'Evaluación'
+    WHEN cm.module = 17 THEN 'Archivo'
+    WHEN cm.module = 15 THEN 'Vídeo'
+END AS Tipo,
+
+
+CASE 
+    WHEN cm.module = 15 THEN (SELECT a15.name FROM mdl_page a15               WHERE a15.id = cm.instance)
+    WHEN cm.module = 17 THEN (SELECT a17.name FROM mdl_resource a17         WHERE a17.id = cm.instance)
+    WHEN cm.module = 18 THEN (SELECT a18.name FROM mdl_scorm a18             WHERE a18.id = cm.instance)
+END AS Nombre,
+(cm.section - 1) AS Lección
+
+FROM mdl_course_modules cm

@@ -1,0 +1,9 @@
+SELECT s.id as secid, s.name as leccion, mm.name as modulename FROM mdl_course_sections s
+					JOIN mdl_course c ON s.course=c.id
+					JOIN mdl_course_modules m ON m.course=c.id
+					JOIN mdl_modules mm ON m.module=mm.id
+					WHERE s.name !='' AND c.id='".$_GET["curso"]."'
+					group by c.id, s.name
+					ORDER BY c.id, s.id"
+
+LIKE CONCAT('%', t2.Name ,'%')

@@ -1,0 +1,18 @@
+# Cuenta el total de recursos en el curso (Archivos Excel)
+SELECT COUNT(l.id) COUNT, l.course, c.fullname coursename
+FROM mdl_resource l INNER JOIN mdl_course c ON l.course = c.id
+GROUP BY course
+ORDER BY COUNT DESC
+
+# Cuenta el total de páginas en el curso (vídeos)
+SELECT COUNT(l.id) COUNT, l.course, c.fullname coursename
+FROM mdl_page l INNER JOIN mdl_course c ON l.course = c.id
+GROUP BY course
+ORDER BY COUNT DESC
+
+# Cuenta el total de SCORM en el curso (Evaluaciones)
+SELECT COUNT(l.id) COUNT, l.course, c.fullname coursename
+FROM mdl_scorm l INNER JOIN mdl_course c ON l.course = c.id
+GROUP BY course
+ORDER BY COUNT DESC
+
